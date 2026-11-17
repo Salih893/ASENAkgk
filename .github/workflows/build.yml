@@ -1,4 +1,3 @@
-
 name: ASENA APK Build
 
 on:
@@ -9,19 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Depoyu indir
+        uses: actions/checkout@v4
 
       - name: Java kur
-        - uses: android-actions/setup-android@v4
-  with:
-    accept-android-sdk-licenses: true
-    log-accepted-android-sdk-licenses: false
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
 
       - name: Android SDK kur
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
 
       - name: Gradle kur
         uses: gradle/actions/setup-gradle@v4
